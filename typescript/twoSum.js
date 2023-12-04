@@ -17,12 +17,21 @@
 //   }
 //   return [];
 // }
+// const twoSum = (nums: number[], target: number): number[] => {
+//   for (let i = 0; i < nums.length; i++) {
+//     let numsT = [...nums];
+//     numsT.splice(i, 1, 0.1);
+//     if (numsT.includes(target - nums[i]))
+//       return [i, numsT.indexOf(target - nums[i])];
+//   }
+//   return [-1, -1];
+// };
 const twoSum = (nums, target) => {
+    const set = new Set();
     for (let i = 0; i < nums.length; i++) {
-        let numsT = [...nums];
-        numsT.splice(i, 1, 0.1);
-        if (numsT.includes(target - nums[i]))
-            return [i, numsT.indexOf(target - nums[i])];
+        if (set.has(target - nums[i]))
+            return [nums.indexOf(target - nums[i]), i];
+        set.add(nums[i]);
     }
     return [-1, -1];
 };
