@@ -4,18 +4,37 @@
 //  * @return {number[]}
 //  */
 
-const twoSum = (nums, target) => {
-  for (let i = 0; i < nums.length; i++) {
-    for (let j = 1; j < nums.length + 1; j++) {
-      if (i !== j) if (nums[i] + nums[j] === target) return [i, j];
-    }
-  }
+// const twoSum = (nums, target) => {
+//   for (let i = 0; i < nums.length; i++) {
+//     for (let j = 1; j < nums.length + 1; j++) {
+//       if (i !== j) if (nums[i] + nums[j] === target) return [i, j];
+//     }
+//   }
 
-  return "no matches";
+//   return "no matches";
+// };
+
+// const twoSum = (nums, target) => {
+//   for (let i = 0; i < nums.length; i++) {
+//     if (target / nums[i] === 2) continue;
+//     if (nums.includes(target - nums[i])) return [nums.indexOf(nums[i]), i];
+//   }
+//   return [-1, -1];
+// };
+
+const twoSum = (nums, target) => {
+  const set = new Set();
+  for (let i = 0; i < nums.length; i++) {
+    if (set.has(target - nums[i])) return [nums.indexOf(target - nums[i]), i];
+    set.add(nums[i]);
+  }
+  return [-1, -1];
 };
 
 console.log(twoSum([3, 3], 6));
 console.log(twoSum([2, 7, 11, 15], 9));
+console.log(twoSum([1, 2, 3], 5));
+console.log(twoSum([3, 2, 4], 6));
 
 // Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 
