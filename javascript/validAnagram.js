@@ -45,12 +45,29 @@ const runTest = (fn, arg1, arg2) => {
 runTest(isAnagramSplit, "anagram", "nagaram");
 runTest(isAnagramSplit, "not", "one");
 runTest(isAnagramSplit, "a", "ab");
+runTest(
+  isAnagramSplit,
+  "thisisamuchlongerstringthatwewillusefortestestingthisisamuchlongerstringthatwewillusefortestesting",
+  "thisisamuchlongerstringthatwewillusefortestestingthisisamuchlongerstringthatwewillusefortestesting"
+);
+
 runTest(isAnagramTemp, "anagram", "nagaram");
 runTest(isAnagramTemp, "not", "one");
 runTest(isAnagramTemp, "a", "ab");
+runTest(
+  isAnagramTemp,
+  "thisisamuchlongerstringthatwewillusefortestestingthisisamuchlongerstringthatwewillusefortestesting",
+  "thisisamuchlongerstringthatwewillusefortestestingthisisamuchlongerstringthatwewillusefortestesting"
+);
+
 runTest(isAnagramArray, "anagram", "nagaram");
 runTest(isAnagramArray, "not", "one");
 runTest(isAnagramArray, "a", "ab");
+runTest(
+  isAnagramArray,
+  "thisisamuchlongerstringthatwewillusefortestestingthisisamuchlongerstringthatwewillusefortestesting",
+  "thisisamuchlongerstringthatwewillusefortestestingthisisamuchlongerstringthatwewillusefortestesting"
+);
 
 // RESULTS :
 
@@ -61,6 +78,8 @@ runTest(isAnagramArray, "a", "ab");
 // Duration:  0.007699999958276749
 // Running test:  isAnagramSplit . With arguments: a, ab
 // Duration:  0.0069000013172626495
+// Running test:  isAnagramSplit . With arguments: thisisamuchlongerstringthatwewillusefortestestingthisisamuchlongerstringthatwewillusefortestesting, thisisamuchlongerstringthatwewillusefortestestingthisisamuchlongerstringthatwewillusefortestesting
+// Duration:  0.04580000042915344
 
 // temp
 // Running test:  isAnagramTemp . With arguments: anagram, nagaram
@@ -69,6 +88,8 @@ runTest(isAnagramArray, "a", "ab");
 // Duration:  0.012699998915195465
 // Running test:  isAnagramTemp . With arguments: a, ab
 // Duration:  0.007899999618530273
+// Running test:  isAnagramTemp . With arguments: thisisamuchlongerstringthatwewillusefortestestingthisisamuchlongerstringthatwewillusefortestesting, thisisamuchlongerstringthatwewillusefortestestingthisisamuchlongerstringthatwewillusefortestesting
+// Duration:  0.040699999779462814
 
 // array
 // Running test:  isAnagramArray . With arguments: anagram, nagaram
@@ -77,6 +98,8 @@ runTest(isAnagramArray, "a", "ab");
 // Duration:  0.0284000001847744
 // Running test:  isAnagramArray . With arguments: a, ab
 // Duration:  0.002299997955560684
+// Running test:  isAnagramArray . With arguments: thisisamuchlongerstringthatwewillusefortestestingthisisamuchlongerstringthatwewillusefortestesting, thisisamuchlongerstringthatwewillusefortestestingthisisamuchlongerstringthatwewillusefortestesting
+// Duration:  0.021699998527765274
 
 // Given two strings s and t, return true if t is an anagram of s, and false otherwise.
 
