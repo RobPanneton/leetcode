@@ -1,4 +1,13 @@
-const containsDuplicate = (nums) => nums.length !== new Set(nums).size;
+// const containsDuplicate = (nums) => nums.length !== new Set(nums).size;
+
+const containsDuplicate = (nums) => {
+  let s = new Set();
+  for (let i = 0; i < nums.length; i++) {
+    if (s.has(nums[i])) return true;
+    s.add(nums[i]);
+  }
+  return false;
+};
 
 console.log(containsDuplicate([1, 2, 3, 1]));
 console.log(containsDuplicate([1, 2, 3, 4]));
