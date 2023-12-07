@@ -126,7 +126,7 @@ runTest(
 // Running test:  isAnagramArray . With arguments: thisisamuchlongerstringthatwewillusefortestestingthisisamuchlongerstringthatwewillusefortestesting, thisisamuchlongerstringthatwewillusefortestestingthisisamuchlongerstringthatwewillusefortestesting
 // Duration:  0.021699998527765274
 
-//map
+// map
 // Running test:  isAnagramMap . With arguments: anagram, nagaram
 // Duration:  0.19929999858140945
 // Running test:  isAnagramMap . With arguments: not, one
