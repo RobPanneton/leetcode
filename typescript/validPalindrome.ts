@@ -1,9 +1,15 @@
+// const isPalindrome = (s: string): boolean => {
+//   let temp: string | string[] = s
+//     .replace(/[\W\s_]/g, "")
+//     .toLowerCase()
+//     .split("");
+//   return temp.join("") === temp.reverse().join("");
+// };
+
 const isPalindrome = (s: string): boolean => {
-  let temp: string | string[] = s
-    .replace(/[\W\s_]/g, "")
-    .toLowerCase()
-    .split("");
-  return temp.join("") === temp.reverse().join("");
+  let temp: string | string[] = s.replace(/[\W\s_]/g, "").toLowerCase();
+  let rev: string | string[] = temp.split("").reverse().join("");
+  return temp === rev;
 };
 
 console.log(isPalindrome("A man, a plan, a canal: Panama")); // true
