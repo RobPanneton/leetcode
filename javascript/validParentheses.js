@@ -20,24 +20,87 @@
 //   return Object.values(count).every((c) => c === 0);
 // };
 
+// const isValid = (s) => {
+//   if (s.length % 2 !== 0) return false;
+
+//   const closing = {
+//     "(": ")",
+//     "[": "]",
+//     "{": "}",
+//   };
+
+//   let stack = [];
+
+//   for (let i = 0; i < s.length; i++) {
+//     if (Object.values(closing).includes(s[i])) {
+//       if (s[i] !== closing[stack[stack.length - 1]]) return false;
+//       stack.pop();
+//       continue;
+//     }
+//     stack.push(s[i]);
+//   }
+//   return stack.length === 0;
+// };
+
+// const isValid = (s) => {
+//   if (s.length % 2 !== 0) return false;
+
+//   const open = "([{";
+//   const closing = ")]}";
+
+//   let stack = [];
+
+//   for (let i = 0; i < s.length; i++) {
+//     if (closing.includes(s[i])) {
+//       if (open[closing.indexOf(s[i])] !== stack[stack.length - 1]) return false;
+//       stack.pop();
+//       continue;
+//     }
+//     stack.push(s[i]);
+//   }
+//   return stack.length === 0;
+// };
+
 const isValid = (s) => {
-  if (s.length % 2 !== 0) return false;
-
-  const open = "([{";
-  const closing = ")]}";
-
   let stack = [];
+  let pairs = {
+    ")": "(",
+    "]": "[",
+    "}": "{",
+  };
 
   for (let i = 0; i < s.length; i++) {
-    if (closing.includes(s[i])) {
-      if (open[closing.indexOf(s[i])] !== stack[stack.length - 1]) return false;
-      stack.pop();
+    if (s[i] === "(" || s[i] === "[" || s[i] === "{") {
+      stack.push(s[i]);
       continue;
     }
-    stack.push(s[i]);
+    if (pairs[s[i]] !== stack[stack.length - 1]) return false;
+    stack.pop();
   }
+
   return stack.length === 0;
 };
+
+// const isValid = (s) => {
+//   let stack = [];
+//   let pairs = {
+//     ")": "(",
+//     "]": "[",
+//     "}": "{",
+//   };
+
+//   for (let i = 0; i < s.length; i++) {
+//     if (s[i] === "(" || s[i] === "[" || s[i] === "{") {
+//       stack.push(s[i]);
+//     } else {
+//       if (!stack.length) return false;
+//       let char = stack.pop();
+//       if (pairs[s[i]] !== char) return false;
+//     }
+//   }
+
+//   return stack.length === 0;
+// };
 
 console.log(isValid("()"));
 console.log(isValid("()[]{}"));
