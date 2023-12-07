@@ -5,12 +5,24 @@
 //   );
 // };
 
+// const isPalindrome = (s) => {
+//   let temp = s
+//     .replace(/[\W\s_]/g, "")
+//     .toLowerCase()
+//     .split("");
+//   return temp.join("") === temp.reverse().join("");
+// };
+
+// const isPalindrome = (s) => {
+//   let temp = s.replace(/[\W\s_]/g, "").toLowerCase();
+//   return temp === temp.split("").reverse().join("");
+// };
+
+// top 98.9% runtime
 const isPalindrome = (s) => {
-  let temp = s
-    .replace(/[\W\s_]/g, "")
-    .toLowerCase()
-    .split("");
-  return temp.join("") === temp.reverse().join("");
+  let temp = s.replace(/[\W\s_]/g, "").toLowerCase();
+  let rev = temp.split("").reverse().join("");
+  return temp === rev;
 };
 
 console.log(isPalindrome("A man, a plan, a canal: Panama")); // true
