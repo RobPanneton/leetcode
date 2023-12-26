@@ -1,8 +1,18 @@
+// better solutions use Bitwise XOR (^)
+
 const singleNumber = (nums) => {
-  let count = {};
-  nums.forEach((n) => (count[n] ? count[n]++ : (count[n] = 1)));
-  return Object.keys(count).find((n) => count[n] === 1);
+  if (nums.length === 1) return nums[0];
+
+  nums.sort();
+  for (let i = 0; i < nums.length; i += 2)
+    if (nums[i] !== nums[i + 1]) return nums[i];
 };
+
+// const singleNumber = (nums) => {
+//   let count = {};
+//   nums.forEach((n) => (count[n] ? count[n]++ : (count[n] = 1)));
+//   return Object.keys(count).find((n) => count[n] === 1);
+// };
 
 console.log(singleNumber([2, 2, 1]));
 console.log(singleNumber([4, 1, 2, 1, 2]));
